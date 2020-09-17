@@ -9,7 +9,8 @@
        window.addEventlistener("load", function() {
            let form = document.querySelector("form");
             form.addEventListener("submit", function(event) {
-               alert("submit click"); 
+                event.preventDefault();
+                event.stopPropagation();
                 
                let pilotName = document.querySelector("input[name=pilotName]");
                let copilotName = document.querySelector("input[name=copilotName]");
@@ -18,8 +19,7 @@
 
                if(pilotName === "" || copilotName === "" || fuelLevel === "" || isNaN(fuelLevel) || cargoMass === "" || isNaN(cargoMass)) {
                    alert("All fields are required!");
-                   event.preventDefault();
-                   event.stopPropagation
+                   
                }
 
             }); 
