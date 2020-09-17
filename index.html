@@ -20,6 +20,17 @@
                if(pilotName === "" || copilotName === "" || fuelLevel === "" || isNaN(fuelLevel) || cargoMass === "" || isNaN(cargoMass)) {
                    alert("All fields are required!");
                    
+               } else {
+                   if (fuelLevel < 10000) {
+                       fuelStatus = ("Not enough fuel for the journey");
+                   } else {
+                       fuelStatus = ("Fuel is adequate for the journey");
+                   }
+                   if (cargoMass > 10000) {
+                       cargoStatus = ("Too much mass for the shuttle to take off");
+                   } else {
+                       cargoMass = ("Cargo mass is adequate for take off");
+                   }
                }
 
             }); 
