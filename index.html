@@ -5,37 +5,6 @@
         <link rel = "stylesheet" type = "text/css" href = "styles.css" />
         <script src = "script.js"></script>
     </head>
-    <script>
-       window.addEventlistener("load", function() {
-           let form = document.querySelector("form");
-            form.addEventListener("submit", function(event) {
-                event.preventDefault();
-                event.stopPropagation();
-                
-               let pilotName = document.querySelector("input[name=pilotName]");
-               let copilotName = document.querySelector("input[name=copilotName]");
-               let fuelLevel = document.querySelector("input[name=fuelLevel]");
-               let cargoMass = document.querySelector("input[name=cargoMass]");
-
-               if(pilotName === "" || copilotName === "" || fuelLevel === "" || isNaN(fuelLevel) || cargoMass === "" || isNaN(cargoMass)) {
-                   alert("All fields are required!");
-                   
-               } else {
-                   if (fuelLevel < 10000) {
-                       fuelStatus = ("Not enough fuel for the journey");
-                   } else {
-                       fuelStatus = ("Fuel is adequate for the journey");
-                   }
-                   if (cargoMass > 10000) {
-                       cargoStatus = ("Too much mass for the shuttle to take off");
-                   } else {
-                       cargoMass = ("Cargo mass is adequate for take off");
-                   }
-               }
-
-            }); 
-        });
-    </script>
     <body>
         <h1>Launch Checklist Form</h1>
         <div id="missionTarget">
