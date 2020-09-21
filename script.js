@@ -1,19 +1,19 @@
 // Write your JavaScript code here!
 window.addEventlistener("load", function() {
-    let form = document.querySelector("form");
-     form.addEventListener("submit", function(event) {
+      let form = document.querySelector("form");
+      form.addEventListener("submit", function(event) {
          event.preventDefault();
          event.stopPropagation();
          
-        let pilotName = document.querySelector("input[name=pilotName]");
-        let copilotName = document.querySelector("input[name=copilotName]");
-        let fuelLevel = document.querySelector("input[name=fuelLevel]");
-        let cargoMass = document.querySelector("input[name=cargoMass]");
+      let pilotName = document.querySelector("input[name=pilotName]");
+      let copilotName = document.querySelector("input[name=copilotName]");
+      let fuelLevel = document.querySelector("input[name=fuelLevel]");
+      let cargoMass = document.querySelector("input[name=cargoMass]");
 
-        let items = document.getElementById("faultyItems");
-        let launchStatus = document.getElementById("launchStatus");
-        let fuelStatus = document.getElementById("fuelStatus");
-        let cargoStatus = document.getElementById("cargoStatus");
+      let items = document.getElementById("faultyItems");
+      let launchStatus = document.getElementById("launchStatus");
+      let fuelStatus = document.getElementById("fuelStatus");
+      let cargoStatus = document.getElementById("cargoStatus");
         
         if(pilotName === "" || copilotName === "" || fuelLevel === "" || isNaN(fuelLevel) || cargoMass === "" || isNaN(cargoMass)) {
                   alert("All fields are required!"); } 
@@ -40,8 +40,11 @@ window.addEventlistener("load", function() {
  });
 
 //  This block of code shows how to format the HTML once you fetch some planetary JSON!
- fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
-   response.json().then( function(json) {
+function fetchData() {
+
+ fetch("https://handlers.education.launchcode.org/static/planets.json")
+   .then(function(response) {
+      response.json().then(function(json) {
       const div = document.getElementById("missionTarget");
 
       div.innerHTML = `
@@ -56,4 +59,4 @@ window.addEventlistener("load", function() {
    <img src="${json.image}">`
    });
 });
-
+}
