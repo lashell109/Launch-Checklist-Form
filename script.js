@@ -31,31 +31,36 @@ const divTarget = document.getElementById("missionTarget");
    let launchStatus = document.getElementById("launchStatus");
    let fuelStatus = document.getElementById("fuelStatus");
    let cargoStatus = document.getElementById("cargoStatus");
+   let ready = true;
      
       if (pilotName === "" || !isNaN(pilotName) || copilotName === "" || !isNaN(copilotName) || fuelLevel === "" || isNaN(fuelLevel) || cargoMass === "" || isNaN(cargoMass)) {
-         alert("All fields are required!"); } 
+         alert("All fields are required!");
+         items.style.visibility = "visible";
+         launchStatus.innerHTML = "Awaiting Information Before Launch"; } 
 
       else {
             document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName}`
             document.getElementById("copilotStatus").innerHTML = `CoPilot ${copilotName}`
 
             if (fuelLevel < 10000) {
+               ready = false;
+               items.style.visibility = "visible";
                launchStatus.style.color = "red";
                fuelStatus.innerHTML = "There is not enough fuel for the journey"; }
             
             else {
                launchStatus.style.color = "green";
-               fuelStatus.innerHTML = "Fuel level high enough for launch";
-            }
+               fuelStatus.innerHTML = "Fuel level high enough for launch"; }
 
             if (cargoMass > 10000) {
+               ready = false;
+               items.style.visibility = "visible";
                launchStatus.style.color = "red";
                cargoStatus.innerHTML = "Too much mass for the shuttle to take off"; }
             
             else {
                launchStatus.style.color = "green";
-               cargoMass = ("Cargo mass low enough for launch");
-         }
+               cargoMass.innerHTML = "Cargo mass low enough for launch"; }
      }
   }); 
 });
