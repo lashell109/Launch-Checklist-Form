@@ -33,7 +33,7 @@ const divTarget = document.getElementById("missionTarget");
    let cargoStatus = document.getElementById("cargoStatus");
    let ready = true;
      
-      if (pilotName === "" || !isNaN(pilotName) || copilotName === "" || !isNaN(copilotName) || fuelLevel === "" || isNaN(fuelLevel) || cargoMass === "" || isNaN(cargoMass)) {
+      if (pilotName.value === "" || !isNaN(pilotName) || copilotName.value === "" || !isNaN(copilotName) || fuelLevel.value === "" || isNaN(fuelLevel) || cargoMass.value === "" || isNaN(cargoMass)) {
          alert("All fields are required!");
          items.style.visibility = "visible";
          launchStatus.innerHTML = "Awaiting Information Before Launch"; } 
