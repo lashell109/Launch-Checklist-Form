@@ -22,10 +22,10 @@ const divTarget = document.getElementById("missionTarget");
       event.preventDefault();
       event.stopPropagation();
       
-   let pilotName = document.querySelector("input[name=pilotName]");
-   let copilotName = document.querySelector("input[name=copilotName]");
-   let fuelLevel = document.querySelector("input[name=fuelLevel]");
-   let cargoMass = document.querySelector("input[name=cargoMass]");
+   let pilotName = document.querySelector("input[name=pilotName]").value;
+   let copilotName = document.querySelector("input[name=copilotName]").value;
+   let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
+   let cargoMass = document.querySelector("input[name=cargoMass]").value;
 
    let items = document.getElementById("faultyItems");
    let launchStatus = document.getElementById("launchStatus");
@@ -33,7 +33,7 @@ const divTarget = document.getElementById("missionTarget");
    let cargoStatus = document.getElementById("cargoStatus");
    let ready = true;
      
-      if (pilotName.value === "" || !isNaN(pilotName) || copilotName.value === "" || !isNaN(copilotName) || fuelLevel.value === "" || isNaN(fuelLevel) || cargoMass.value === "" || isNaN(cargoMass)) {
+      if (pilotName === "" || !isNaN(pilotName) || copilotName === "" || !isNaN(copilotName) || fuelLevel === "" || isNaN(fuelLevel) || cargoMass === "" || isNaN(cargoMass)) {
          alert("All fields are required!");
          items.style.visibility = "visible";
          launchStatus.innerHTML = "Awaiting Information Before Launch"; } 
