@@ -36,6 +36,7 @@ const divTarget = document.getElementById("missionTarget");
       if (pilotName.value === "" || !isNaN(pilotName) || copilotName.value === "" || !isNaN(copilotName) || fuelLevel.value === "" || isNaN(fuelLevel) || cargoMass.value === "" || isNaN(cargoMass)) {
          alert("All fields are required!");
          items.style.visibility = "hidden";
+
       } else {
             items.style.visibility = "visible";
             launchStatus.innerHTML = "Awaiting Information Before Launch";
@@ -45,22 +46,26 @@ const divTarget = document.getElementById("missionTarget");
             if (fuelLevel < 10000) {
                ready = false;
                items.style.visibility = "visible";
+               launchStatus.innerHTML = "Shuttle Not Ready for Launch";
                launchStatus.style.color = "red";
                fuelStatus.innerHTML = "There is not enough fuel for the journey = not ready";                                                                                                                    
             
             } else {
                ready = true;
+               launchStatus.innerHTML = "Awaiting Information Before Launch";
                launchStatus.style.color = "green";
                fuelStatus.innerHTML = "Fuel level high enough for launch = ready"; }
 
             if (cargoMass > 10000) {
                ready = false;
                items.style.visibility = "visible";
+               launchStatus.innerHTML = "Shuttle Not Ready for Launch";
                launchStatus.style.color = "red";
                cargoStatus.innerHTML = "Too much mass for the shuttle to take off = not ready"; 
             
             } else {
                ready = true;
+               launchStatus.innerHTML = "Awaiting Information Before Launch";
                launchStatus.style.color = "green";
                cargoStatus.innerHTML = "Cargo mass low enough for launch = ready"; }
      }
